@@ -36,7 +36,7 @@ bool DecryptPass::securityChk()
             ifstream file(username + ".dat", ios::out | ios::binary);
             // getline(file, passmat);
             file.read(passmat, sizeof(pass));
-            cout << string(passmat) << endl;
+            // cout << string(passmat) << endl;
             file.close();
             if (string(passmat).compare(pass) == 0)
             {

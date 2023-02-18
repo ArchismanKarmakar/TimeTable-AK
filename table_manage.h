@@ -8,18 +8,18 @@
         cout << "Press a key to continue..."; \
     } while (cin.get() != '\n')
 
-class TimeTable
-{
-public:
-    int getDay();
-    void setDay(int day);
-    void displayRoutine(std::string uname);
+// class TimeTable
+// {
+// public:
+//     int getDay();
+//     void setDay(int day);
+//     void displayRoutine(std::string uname);
 
-private:
-    int day = 0;
-};
+// private:
+//     int day = 0;
+// };
 
-class Period : public TimeTable
+class Period
 {
 public:
     void periodConstructor(int periodNo, int startTime, int endTime, std::string facultyId, std::string subId, int day, int totalPeriods)

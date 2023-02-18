@@ -13,7 +13,7 @@
 ##### 1. Clone the Repository using Git
 #
 ```console
-https://github.com/ArchismanKarmakar/TimeTable-AK.git
+git clone https://github.com/ArchismanKarmakar/TimeTable-AK.git
 ```
 #
 or just download the ZIP file from above.

@@ -8,5 +8,5 @@ public:
     }
 
 private:
-    string username;
+    std::string username;
 };

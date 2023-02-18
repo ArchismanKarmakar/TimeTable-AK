@@ -2,6 +2,7 @@
 ## A C++20 CLI based Routine Management System
 
 ![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen?style=for-the-badge&logo=cplusplus)
+![Development Status](https://img.shields.io/badge/Development-Ongoing-red?style=for-the-badge&logo=cplusplus)
 
 ##### Readme Written by Archisman Karmakar
 

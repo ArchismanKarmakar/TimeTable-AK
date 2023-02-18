@@ -30,23 +30,30 @@ bool DecryptPass::securityChk()
         if (std::filesystem::exists(funame))
         {
             string pass;
-            string passmat;
-            fstream file;
+            char *passmat;
             cout << "Enter password: ";
             cin >> pass;
-            file.open(username + ".dat", ios::out | ios::binary);
-            getline(file, passmat);
-            if (passmat.compare(pass) == 0)
+            ifstream file(username + ".dat", ios::out | ios::binary);
+            // getline(file, passmat);
+            file.read(passmat, sizeof(pass));
+            cout << string(passmat) << endl;
+            file.close();
+            if (string(passmat).compare(pass) == 0)
             {
-                file.close();
                 return true;
+            }
+            else
+            {
+                cout << "Password does not match." << endl;
+                pause();
+                return false;
             }
         }
     }
     catch (const std::exception &e)
     {
         std::cerr << e.what() << '\n';
-        getchar();
+        pause();
         return false;
     }
     return false;

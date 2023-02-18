@@ -21,7 +21,19 @@
 #include "signup.h"
 
 // #define cls() system("cls");
+// #define swap(a, b) do { typeof(a) temp = a; a = b; b = temp; } while (0)
+
 #define cls() cout << "\033[2J\033[1;1H";
+
+#define pause()                               \
+    do                                        \
+    {                                         \
+        cout << "\n";                         \
+    } while (cin.get() != '\n');              \
+    do                                        \
+    {                                         \
+        cout << "Press a key to continue..."; \
+    } while (cin.get() != '\n')
 
 using namespace std;
 namespace fs = std::filesystem;
@@ -51,8 +63,11 @@ int main()
                 if (dp.securityChk())
                 {
                     cout << "Login Successful." << endl;
-                    getchar();
+                    pause();
                 }
+
+                // After Login operations to be added
+                
             }
             else
             {
@@ -65,7 +80,7 @@ int main()
                     if (ep.createUser())
                     {
                         cout << "File created successfully. You can now login." << endl;
-                        getchar();
+                        pause();
                     }
                 }
             }
@@ -80,14 +95,14 @@ int main()
             if (std::filesystem::exists(funame))
             {
                 cout << "File already exists. Please Login." << endl;
-                getchar();
+                pause();
                 break;
             }
             EncryptPass ep(uname);
             if (ep.createUser())
             {
                 cout << "File created successfully. You can now login." << endl;
-                getchar();
+                pause();
             }
             break;
         }
@@ -98,7 +113,7 @@ int main()
         default:
         {
             cout << "Invalid choice." << endl;
-            getchar();
+            pause();
             break;
         }
         }

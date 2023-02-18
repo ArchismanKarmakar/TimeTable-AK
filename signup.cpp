@@ -27,7 +27,26 @@ bool EncryptPass::createUser()
     try
     {
         string funame = username + ".dat";
-        ofstream MyFile(funame, ios::out | ios::binary);
+        if (std::filesystem::exists(funame))
+        {
+            cout << "File Already Exists." << endl;
+            return false;
+        }
+        string pass;
+        ofstream file(funame, ios::out | ios::binary);
+        cout << "Enter new password: ";
+        cin >> pass;
+        file.write((char *)pass.c_str(), sizeof(pass));
+        file.close();
+        if (file.good())
+        {
+            return true;
+        }
+        else
+        {
+            cout << "Error occurred while creating file." << endl;
+            return false;
+        }
     }
     catch (const std::exception &e)
     {

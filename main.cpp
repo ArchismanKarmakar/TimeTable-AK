@@ -18,5 +18,12 @@
 #include <filesystem>
 
 #include <login.h>
+#include <signup.h>
 
 using namespace std;
+
+int main()
+{
+    
+    return EXIT_SUCCESS;
+}

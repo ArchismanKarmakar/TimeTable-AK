@@ -20,7 +20,8 @@
 #include "login.h"
 #include "signup.h"
 
-#define cls() system("cls");
+// #define cls() system("cls");
+#define cls() cout << "\033[2J\033[1;1H";
 
 using namespace std;
 namespace fs = std::filesystem;
@@ -50,6 +51,7 @@ int main()
                 if (dp.securityChk())
                 {
                     cout << "Login Successful." << endl;
+                    cin.get();
                 }
             }
             else
@@ -63,12 +65,13 @@ int main()
                     if (ep.createUser())
                     {
                         cout << "File created successfully. You can now login." << endl;
+                        cin.get();
                     }
                 }
             }
             break;
         }
-        case2:
+        case 2:
         {
             cout << "Enter Username: ";
             string uname;
@@ -77,12 +80,14 @@ int main()
             if (std::filesystem::exists(funame))
             {
                 cout << "File already exists. Please Login." << endl;
+                cin.get();
                 break;
             }
             EncryptPass ep(uname);
             if (ep.createUser())
             {
                 cout << "File created successfully. You can now login." << endl;
+                cin.get();
             }
             break;
         }
@@ -93,6 +98,7 @@ int main()
         default:
         {
             cout << "Invalid choice." << endl;
+            cin.get();
             break;
         }
         }

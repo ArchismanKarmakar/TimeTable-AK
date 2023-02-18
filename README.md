@@ -9,33 +9,46 @@
 [![My Skills](https://skillicons.dev/icons?i=cpp,c,cmake,vscode,git,github)](https://archisman.org)
 
 ## Getting Started
-#
+<br>
+
 ##### 1. Clone the Repository using Git
-#
+
+<br>
+
 ```console
 git clone https://github.com/ArchismanKarmakar/TimeTable-AK.git
 ```
-#
+<br>
+
 or just download the ZIP file from above.
 
-#
+<br>
+
 ##### 2. Next extract the files in a folder & open the content using VS Code or any other IDE/Editor.
-#
-##### 
+
+<br>
+
 
 
 ### Requirements
 ##### Cygwin x64|x86 based g++|gcc|cpp|cmake i.e gcc version 10 containing g++17 or higher.
 ##### Alternatively MSYS32 or Clang64 can also be used, but please avoid MinGW.
-#
+
+<br>
+
 ### How to contribute?
-#
+
+<br>
+
 > Push the changes
 > Then Create a PR
-#
+
+<br>
+
 >Setup the repository in your local machine and make the necessary changes.
 Open Terminal and write the following commands :
-#
+<br>
+
 ```console
 git status
 git add .

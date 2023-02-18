@@ -31,12 +31,12 @@ or just download the ZIP file from above.
 ## How to Compile & run ?
 <br>
 You can directly use: 
-```
+```console
 g++ -o main main.cpp login.cpp signup.cpp
 ```
 <br>
 or
-```
+```console
 cd "path of your project folder" ; if ($?) { g++ main.cpp login.cpp signup.cpp -o main } ; if ($?) { .\main }
 ```
 <br>

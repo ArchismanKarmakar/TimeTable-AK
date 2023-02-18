@@ -28,7 +28,16 @@ or just download the ZIP file from above.
 
 <br>
 
-
+## How to Compile & run ?
+<br>
+You can directly use: 
+`g++ -o main main.cpp login.cpp signup.cpp`
+<br>
+or
+`
+cd "path of your project folder" ; if ($?) { g++ main.cpp login.cpp signup.cpp -o main } ; if ($?) { .\main }
+`
+<br>
 
 ### Requirements
 ##### Cygwin x64|x86 based g++|gcc|cpp|cmake i.e gcc version 10 containing g++17 or higher.

@@ -2,7 +2,7 @@ class DecryptPass
 {
 public:
     bool securityChk();
-    DecryptPass(char *uname)
+    DecryptPass(std::string uname)
     {
         username = uname;
     }

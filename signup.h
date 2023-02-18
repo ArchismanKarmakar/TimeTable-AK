@@ -2,7 +2,7 @@ class EncryptPass
 {
 public:
     bool createUser();
-    EncryptPass(char *uname)
+    EncryptPass(std::string uname)
     {
         username = uname;
     }

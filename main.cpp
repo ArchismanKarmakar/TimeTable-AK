@@ -51,7 +51,7 @@ int main()
                 if (dp.securityChk())
                 {
                     cout << "Login Successful." << endl;
-                    getc(stdin);
+                    getchar();
                 }
             }
             else
@@ -65,7 +65,7 @@ int main()
                     if (ep.createUser())
                     {
                         cout << "File created successfully. You can now login." << endl;
-                        getc(stdin);
+                        getchar();
                     }
                 }
             }
@@ -80,14 +80,14 @@ int main()
             if (std::filesystem::exists(funame))
             {
                 cout << "File already exists. Please Login." << endl;
-                getc(stdin);
+                getchar();
                 break;
             }
             EncryptPass ep(uname);
             if (ep.createUser())
             {
                 cout << "File created successfully. You can now login." << endl;
-                getc(stdin);
+                getchar();
             }
             break;
         }
@@ -98,7 +98,7 @@ int main()
         default:
         {
             cout << "Invalid choice." << endl;
-            getc(stdin);
+            getchar();
             break;
         }
         }

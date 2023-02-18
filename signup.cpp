@@ -45,14 +45,14 @@ bool EncryptPass::createUser()
         else
         {
             cout << "Error occurred while creating file." << endl;
-            getc(stdin);
+            getchar();
             return false;
         }
     }
     catch (const std::exception &e)
     {
         std::cerr << e.what() << '\n';
-        getc(stdin);
+        getchar();
         return false;
     }
     return false;

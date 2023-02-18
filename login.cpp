@@ -46,7 +46,7 @@ bool DecryptPass::securityChk()
     catch (const std::exception &e)
     {
         std::cerr << e.what() << '\n';
-        getc(stdin);
+        getchar();
         return false;
     }
     return false;

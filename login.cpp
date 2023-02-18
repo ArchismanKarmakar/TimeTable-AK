@@ -33,7 +33,7 @@ bool DecryptPass::securityChk()
             char *passmat;
             cout << "Enter password: ";
             cin >> pass;
-            ifstream file(username + ".dat", ios::out | ios::binary);
+            ifstream file(username + ".dat", ios::out | ios::in);
             // getline(file, passmat);
             file.read(passmat, sizeof(pass));
             // cout << string(passmat) << endl;

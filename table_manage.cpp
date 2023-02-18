@@ -38,7 +38,7 @@ void Period::openFileChk(string uname)
     string funame = uname + ".dat";
     if (std::filesystem::exists(funame))
     {
-        ifstream file(funame, ios::out | ios::binary);
+        ifstream file(funame, ios::out | ios::in);
         file.close();
     }
 }
@@ -49,7 +49,7 @@ void displayRoutine(std::string uname)
     if (std::filesystem::exists(funame))
     {
         vector<Period> period(25);
-        ifstream file(funame, ios::out | ios::binary);
+        ifstream file(funame, ios::out | ios::in);
         file.seekg(9, ios::beg);
         int i = -1;
         while (!file.eof())

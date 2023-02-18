@@ -33,7 +33,7 @@ bool EncryptPass::createUser()
             return false;
         }
         string pass;
-        ofstream file(funame, ios::out | ios::binary);
+        ofstream file(funame, ios::out | ios::in);
         cout << "Password must be exactly 8 characters long only." << endl;
         cout << "Enter new password: ";
         cin >> pass;

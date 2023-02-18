@@ -32,6 +32,7 @@ bool DecryptPass::securityChk()
             string pass;
             string passmat;
             fstream file;
+            cout << "Enter password: ";
             cin >> pass;
             file.open(username + ".dat", ios::out | ios::binary);
             getline(file, passmat);

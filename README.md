@@ -32,15 +32,15 @@ or just download the ZIP file from above.
 <br>
 You can directly use: 
 
-`
+```console
 g++ -o main main.cpp login.cpp signup.cpp
-`
+```
 
 or
 
-`
+```console
 cd "path of your project folder" ; if ($?) { g++ main.cpp login.cpp signup.cpp -o main } ; if ($?) { .\main }
-`
+```
 
 <br>
 

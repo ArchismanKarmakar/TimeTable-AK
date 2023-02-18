@@ -2,7 +2,7 @@ class DecryptPass
 {
 public:
     bool securityChk();
-    DecryptPass(string uname)
+    DecryptPass(char *uname)
     {
         username = uname;
     }

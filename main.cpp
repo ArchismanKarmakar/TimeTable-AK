@@ -46,7 +46,7 @@ int main()
             string funame = uname + ".dat";
             if (std::filesystem::exists(funame))
             {
-                DecryptPass dp(uname);
+                DecryptPass dp((char *)uname.c_str());
                 if (dp.securityChk())
                 {
                     cout << "Login Successful." << endl;
@@ -59,7 +59,7 @@ int main()
                 cin >> ch;
                 if (ch == 'y' || ch == 'Y')
                 {
-                    EncryptPass ep(uname);
+                    EncryptPass ep((char *)uname.c_str());
                     if (ep.createUser())
                     {
                         cout << "File created successfully. You can now login." << endl;
@@ -79,7 +79,7 @@ int main()
                 cout << "File already exists. Please Login." << endl;
                 break;
             }
-            EncryptPass ep(uname);
+            EncryptPass ep((char *)uname.c_str());
             if (ep.createUser())
             {
                 cout << "File created successfully. You can now login." << endl;

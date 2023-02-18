@@ -2,7 +2,7 @@ class EncryptPass
 {
 public:
     bool createUser();
-    EncryptPass(string uname)
+    EncryptPass(char *uname)
     {
         username = uname;
     }

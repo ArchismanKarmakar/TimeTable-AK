@@ -33,6 +33,8 @@ or just download the ZIP file from above.
 <br>
 You can directly use: 
 
+Compile the project using the CMake compiling file or use:
+
 ```console
 g++ -o main main.cpp login.cpp signup.cpp
 ```
@@ -40,7 +42,28 @@ g++ -o main main.cpp login.cpp signup.cpp
 or
 
 ```console
+
 cd "path of your project folder" ; if ($?) { g++ main.cpp login.cpp signup.cpp -o main } ; if ($?) { .\main }
+```
+
+Or use
+
+```console
+all: main.cpp ./src/global.cpp ./src/faculty.cpp ./src/login.cpp ./src/signup.cpp ./src/table_manage.cpp
+	g++ -o "./build/app" main.cpp ./src/global.cpp ./src/faculty.cpp ./src/login.cpp ./src/signup.cpp ./src/table_manage.cpp
+
+run:
+	./build/app
+
+clean:
+	rm -f ./build/*
+
+clean(win):
+	del /f build\*
+
+headers: ./include/global.hh ./include/faculty.hh ./include/login.hh ./include/signup.hh ./include/table_manage.hh 
+	g++ ./include/global.hh ./include/faculty.hh ./include/login.hh ./include/signup.hh ./include/table_manage.hh
+ 
 ```
 
 <br>

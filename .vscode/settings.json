@@ -1,4 +1,5 @@
 {
+    "C_Cpp.default.configurationProvider": "ms-vscode.makefile-tools",
     "files.associations": {
         "ostream": "cpp",
         "filesystem": "cpp"

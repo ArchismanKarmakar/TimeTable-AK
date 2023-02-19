@@ -7,7 +7,7 @@
 ##### Readme Written by Archisman Karmakar
 
 ### Tech Stack
-[![My Skills](https://skillicons.dev/icons?i=cpp,c,cmake,vscode,git,github)](https://archisman.org)
+[![My Skills](https://skillicons.dev/icons?i=cpp,cmake,vscode,git,github,webpack,visualstudio,powershell)](https://archisman.org)
 
 ## Getting Started
 <br>

@@ -17,9 +17,9 @@
 #include <sstream>
 #include <filesystem>
 
-#include "login.h"
-#include "signup.h"
-#include "table_manage.h"
+#include "./../include/login.h"
+#include "./../include/signup.h"
+#include "./../include/table_manage.h"
 
 // #define cls() system("cls");
 // #define swap(a, b) do { typeof(a) temp = a; a = b; b = temp; } while (0)

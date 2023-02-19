@@ -17,9 +17,9 @@
 #include <sstream>
 #include <filesystem>
 
-#include "login.h"
-#include "signup.h"
-#include "table_manage.h"
+#include "./../include/login.h"
+#include "./../include/signup.h"
+#include "./../include/table_manage.h"
 
 using namespace std;
 

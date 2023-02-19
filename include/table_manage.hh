@@ -1,3 +1,6 @@
+#ifndef TABLE_MANAGE
+#define TABLE_MANAGE
+
 #include <iostream>
 #include <cstdlib>
 #include <vector>
@@ -16,6 +19,8 @@
 #include <fstream>
 #include <sstream>
 #include <filesystem>
+
+using namespace std;
 
 #define pause()                               \
     do                                        \
@@ -58,3 +63,5 @@ private:
     std::string facultyId;
     std::string subId;
 };
+
+#endif

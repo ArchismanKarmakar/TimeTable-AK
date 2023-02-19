@@ -1,5 +1,5 @@
-#ifndef SIGNUP
-#define SIGNUP
+#ifndef FACULTY
+#define FACULTY
 #include <iostream>
 #include <cstdlib>
 #include <vector>
@@ -18,19 +18,26 @@
 #include <fstream>
 #include <sstream>
 #include <filesystem>
+#include <./../include/global.hh>
 
 using namespace std;
 
-class EncryptPass
+class Faculty // ABSTRACT CLASS
 {
-public:
-    bool createUser();
-    EncryptPass(std::string uname)
-    {
-        username = uname;
-    }
+protected:
+    string id;
+    string name;
+    int16_t age;
+    string phone;
+    string email;
+    char gender;
 
-private:
-    std::string username;
+public:
+    Faculty();
+    void addFaculty(int16_t minAge = 18, int16_t maxAge = 100);
+    void removeFaculty();
+    void editMap();
+    void fillMap();
 };
+
 #endif

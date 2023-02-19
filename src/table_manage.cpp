@@ -19,6 +19,7 @@
 
 #include "./../include/login.hh"
 #include "./../include/signup.hh"
+#include <./../include/global.hh>
 #include "./../include/table_manage.hh"
 
 using namespace std;

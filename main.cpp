@@ -20,26 +20,29 @@
 #include "./../include/login.hh"
 #include "./../include/signup.hh"
 #include "./../include/table_manage.hh"
+#include <./../include/global.hh>
 
 // #define cls() system("cls");
 // #define swap(a, b) do { typeof(a) temp = a; a = b; b = temp; } while (0)
 
 #define cls() cout << "\033[2J\033[1;1H";
 
-#define pause()                               \
-    do                                        \
-    {                                         \
-        cout << "\n";                         \
-    } while (cin.get() != '\n');              \
-    do                                        \
-    {                                         \
-        cout << "Press a key to continue..."; \
-    } while (cin.get() != '\n')
-
 using namespace std;
 namespace fs = std::filesystem;
 
+void loginSignup();
+
 int main()
+{
+    int choice;
+    while (1)
+    {
+        cls();
+    }
+    return EXIT_SUCCESS;
+}
+
+void loginSignup()
 {
     int choice;
     while (1)
@@ -68,7 +71,6 @@ int main()
                 }
 
                 // After Login operations to be added
-
             }
             else
             {
@@ -119,5 +121,4 @@ int main()
         }
         }
     }
-    return EXIT_SUCCESS;
 }

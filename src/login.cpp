@@ -18,6 +18,7 @@
 #include <filesystem>
 
 #include "./../include/login.hh"
+#include <./../include/global.hh>
 
 using namespace std;
 namespace fs = std::filesystem;

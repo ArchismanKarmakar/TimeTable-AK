@@ -1,3 +1,22 @@
+#include <iostream>
+#include <cstdlib>
+#include <vector>
+#include <algorithm>
+#include <cmath>
+#include <array>
+#include <set>
+#include <map>
+#include <cstring>
+#include <queue>
+#include <stack>
+#include <chrono>
+#include <random>
+#include <functional>
+#include <limits>
+#include <fstream>
+#include <sstream>
+#include <filesystem>
+
 #define pause()                               \
     do                                        \
     {                                         \
@@ -8,11 +27,11 @@
         cout << "Press a key to continue..."; \
     } while (cin.get() != '\n')
 
-class EncryptPass
+class DecryptPass
 {
 public:
-    bool createUser();
-    EncryptPass(std::string uname)
+    bool securityChk();
+    DecryptPass(std::string uname)
     {
         username = uname;
     }

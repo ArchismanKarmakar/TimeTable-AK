@@ -17,7 +17,7 @@
 #include <sstream>
 #include <filesystem>
 
-#include "signup.h"
+#include "signup.hh"
 
 using namespace std;
 namespace fs = std::filesystem;

@@ -83,7 +83,7 @@ void Faculty::fillMap()
     // //skipping the first row containing column headers;
     // getline(f >> ws, temp);
     // analyzing each entry afterwards;
-    (getline(f >> ws, temp));
+    // (getline(f >> ws, temp));
     {
         Faculty a;
         // creating a string stream object to read from string 'temp';
@@ -125,7 +125,7 @@ void Faculty::editMap()
     // //skipping the first row containing column headers;
     // getline(f >> ws, temp);
     // analyzing each entry afterwards;
-    (getline(f >> ws, temp));
+    // (getline(f >> ws, temp));
     {
         // Faculty a;
         // creating a string stream object to read from string 'temp';

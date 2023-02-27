@@ -221,7 +221,7 @@ void Faculty::editMap()
     return;
 }
 
-void removeFaculty()
+void Faculty::removeFaculty()
 {
     string id;
     cout << "\nEnter Id to edit: \n";

@@ -20,48 +20,67 @@
 #include <sstream>
 #include <filesystem>
 
+#include "./employee.hh"
+// #include "./patient.hh"
+// #include "./nurse.hh"
+// #include "./driver.hh"
+// #include "./ambulance.hh"
+// #include "./appointment.hh"
+
+#define ull unsigned long long
+
 using namespace std;
 
-#define pause()                               \
-    do                                        \
-    {                                         \
-        cout << "\n";                         \
-    } while (cin.get() != '\n');              \
-    do                                        \
-    {                                         \
-        cout << "Press a key to continue..."; \
-    } while (cin.get() != '\n')
-
-// class TimeTable
-// {
-// public:
-//     int getDay();
-//     void setDay(int day);
-//     void displayRoutine(std::string uname);
-
-// private:
-//     int day = 0;
-// };
-
-class Period
+class classStandard
 {
 public:
-    void periodConstructor(int periodNo, int startTime, int endTime, std::string facultyId, std::string subId, int day, int totalPeriods)
+    void classStandardCreate(std::string classStandard_fname);
+
+    void periodConstructor(ull periodNo)
     {
-        this->periodNo = periodNo;
-        this->startTime = startTime;
-        this->endTime = endTime;
-        this->facultyId = facultyId;
-        this->subId = subId;
     }
-    void openFileChk(std::string uname);
+
+    void displayRoutine();
+
+    classStandard(string classStandard_fname);
 
 private:
-    int periodNo;
-    int startTime;
-    int endTime;
-    std::string facultyId;
-    std::string subId;
+    ull periodNo;
+};
+
+bool classStandardChk(std::string classStandard_fname);
+
+class table_manage
+{
+private:
+    //map<id, object>
+    static map<int, Employee> employeeList;
+    // static map<int, patient> patientsList;
+    // static map<int, nurse> nursesList;
+    // static map<int, driver> driversList;
+    // static map<int, ambulance> ambulancesList;
+    // static map<int, appointment> appointmentsList;
+
+    static const int employeeLimit;
+    // static const int nursesLimit;
+    // static const int driversLimit;
+    // static const int ambulancesLimit;
+    // static const int appointmentsLimit;
+
+    friend class Employee;
+    // friend class patient;
+    // friend class nurse;
+    // friend class driver;
+    // friend class ambulance;
+    // friend class appointment;
+
+public:
+    static void printEmployees();
+    // static void printPatients();
+    // static void printNurses();
+    // static void printDrivers();
+    // static void printAmbulances();
+    // static void printAppointments();
 };
 
 #endif

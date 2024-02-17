@@ -21,11 +21,11 @@
 #include <filesystem>
 
 #include "./employee.hh"
-// #include "./patient.hh"
+#include "./course.hh"
 // #include "./nurse.hh"
 // #include "./driver.hh"
 // #include "./ambulance.hh"
-// #include "./appointment.hh"
+#include "./routine.hh"
 
 #define ull unsigned long long
 
@@ -53,34 +53,38 @@ bool classStandardChk(std::string classStandard_fname);
 class table_manage
 {
 private:
-    //map<id, object>
+    // map<id, object>
     static map<int, Employee> employeeList;
     // static map<int, patient> patientsList;
+    static map<int, Course> courseList;
     // static map<int, nurse> nursesList;
     // static map<int, driver> driversList;
     // static map<int, ambulance> ambulancesList;
-    // static map<int, appointment> appointmentsList;
+    static map<int, Routine> appointmentsList;
 
     static const int employeeLimit;
     // static const int nursesLimit;
     // static const int driversLimit;
     // static const int ambulancesLimit;
-    // static const int appointmentsLimit;
+    static const int appointmentsLimit;
 
     friend class Employee;
+    friend class Course;
+    friend class Routine;
     // friend class patient;
     // friend class nurse;
     // friend class driver;
     // friend class ambulance;
-    // friend class appointment;
+    friend class appointment;
 
 public:
     static void printEmployees();
     // static void printPatients();
+    static void printCourses();
     // static void printNurses();
     // static void printDrivers();
     // static void printAmbulances();
-    // static void printAppointments();
+    static void printAppointments();
 };
 
 #endif

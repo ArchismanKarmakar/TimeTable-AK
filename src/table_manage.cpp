@@ -19,11 +19,11 @@
 
 #include "./../include/table_manage.hh"
 #include "./../include/employee.hh"
-// #include "./../include/patient.hh"
+#include "./../include/course.hh"
 // #include "./../include/nurse.hh"
 // #include "./../include/driver.hh"
 // #include "./../include/ambulance.hh"
-// #include "./../include/appointment.hh"
+#include "./../include/routine.hh"
 // #include "./../include/table_manage.hh"
 
 using namespace std;
@@ -44,16 +44,17 @@ bool classStandardChk(string classStandard_fname)
 
 map<int, Employee> table_manage::employeeList;
 // map<int, patient> table_manage::patientsList;
+map<int, Course> table_manage::courseList;
 // map<int, nurse> table_manage::nursesList;
 // map<int, driver> table_manage::driversList;
 // map<int, ambulance> table_manage::ambulancesList;
-// map<int, appointment> table_manage::appointmentsList;
+map<int, Routine> table_manage::appointmentsList;
 
 const int table_manage::employeeLimit = 30;
 // const int table_manage::nursesLimit = 50;
 // const int table_manage::driversLimit = 30;
 // const int table_manage::ambulancesLimit = 30;
-// const int table_manage::appointmentsLimit = 240; //per day;
+const int table_manage::appointmentsLimit = 240; //per day;
 // ummm, patients limit, ummm, no!
 // appointments limit is kind of a patients limit;
 // rest hospitalized patients limit must be equal to;
@@ -75,6 +76,12 @@ void table_manage::printEmployees()
 //         i.second.printDetails(), cout << "\n";
 //     return;
 // }
+void table_manage::printCourses()
+{
+    for (auto i : courseList)
+        i.second.print(), cout << "\n";
+    return;
+}
 // void table_manage::printNurses()
 // {
 //     for (auto i : nursesList)
@@ -93,9 +100,9 @@ void table_manage::printEmployees()
 //         i.second.printDetails(), cout << "\n";
 //     return;
 // }
-// void table_manage::printAppointments()
-// {
-//     for (auto i : appointmentsList)
-//         i.second.printDetails(), cout << "\n";
-//     return;
-// }
+void table_manage::printAppointments()
+{
+    for (auto i : appointmentsList)
+        i.second.printDetails(), cout << "\n";
+    return;
+}

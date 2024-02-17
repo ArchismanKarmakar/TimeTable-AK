@@ -10,8 +10,8 @@ class Employee : public Person
 {
 private:
     string type;
-    int appointmentsBooked;
-    // friend class appointment;
+    int classesScheduled;
+    friend class Routine;
 
 public:
     Employee();

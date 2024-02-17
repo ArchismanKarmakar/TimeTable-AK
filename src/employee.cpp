@@ -1,4 +1,3 @@
-using namespace std;
 #include <vector>
 #include <string>
 #include <iostream>
@@ -9,11 +8,13 @@ using namespace std;
 #include "./../include/employee.hh"
 #include "./../include/table_manage.hh"
 
+using namespace std;
+
 Employee::Employee()
 {
     id = -1;
     type = "";
-    appointmentsBooked = 0;
+    classesScheduled = 0;
     cat = "Employee";
     category = 1;
 }
@@ -45,8 +46,8 @@ void Employee::fillMap()
         d.gender = s4[0];
         d.age = strToNum(s5);
         d.addr.strToAdd(s7);
-        // d.appointmentsBooked = strToNum(s9);
-        table_manage::doctorsList[d.id] = d;
+        d.classesScheduled = strToNum(s9);
+        table_manage::employeeList[d.id] = d;
     }
     f.close();
     return;
@@ -56,11 +57,11 @@ void Employee::saveMap()
     fstream f;
     f.open("./data/temp.csv", ios::out);
     // `le first line conataining column headers:
-    f << "doctorId,firstName,lastName,gender,age,mobNumber,address,type,appointmentsBooked\n";
-    for (auto i : table_manage::doctorsList)
+    f << "doctorId,firstName,lastName,gender,age,mobNumber,address,type,classesScheduled\n";
+    for (auto i : table_manage::employeeList)
         f << i.second.id << "," << i.second.firstName << "," << i.second.lastName << "," << i.second.gender
           << "," << i.second.age << "," << i.second.mobNumber << "," << i.second.addr.addToStr()
-          << "," << i.second.type << "," << i.second.appointmentsBooked << endl;
+          << "," << i.second.type << "," << i.second.classesScheduled << endl;
     f.close();
     remove("./data/Employee.csv");
     rename("./data/temp.csv", "./data/Employee.csv");
@@ -68,22 +69,22 @@ void Employee::saveMap()
 }
 void Employee::addPerson()
 {
-    if (table_manage::doctorsList.size() == table_manage::doctorsLimit)
+    if (table_manage::employeeList.size() == table_manage::employeeLimit)
     {
         cout << "\n\nDoctors limit reached, can't addr more!\n\n";
         return;
     }
     // 18 and 65 are the age limits for registration of a new Employee;
-    person::addPerson(18, 65);
+    Person::addPerson(18, 65);
     if ((age < 18) || (age > 65))
         return;
     cout << "\nEnter the type of the Employee: \n";
     getline(cin >> ws, type);
-    if (table_manage::doctorsList.rbegin() != table_manage::doctorsList.rend())
-        id = ((table_manage::doctorsList.rbegin())->first) + 1;
+    if (table_manage::employeeList.rbegin() != table_manage::employeeList.rend())
+        id = ((table_manage::employeeList.rbegin())->first) + 1;
     else
         id = 1;
-    table_manage::doctorsList[id] = *this;
+    table_manage::employeeList[id] = *this;
 
     // creating a fstream object to read/write from/to files;
     fstream f;
@@ -102,16 +103,16 @@ void Employee::printDetails()
 {
     if (id == -1)
         return;
-    person::printDetails();
+    Person::printDetails();
     cout << "Type            : " << type << "\n";
-    cout << "Appointments    : " << appointmentsBooked << "/8 (appointments booked today)\n";
+    cout << "Appointments    : " << classesScheduled << "/8 (appointments booked today)\n";
     return;
 }
 void Employee::printDetailsFromHistory(string extraDetails)
 {
     if (id == -1)
         return;
-    person::printDetailsFromHistory();
+    Person::printDetailsFromHistory();
     stringstream k(extraDetails);
     string s1, s2;
     getline(k, s1, ',');
@@ -167,8 +168,8 @@ void Employee::getDetails(int rec)
         int reqId;
         cout << "\nEnter ID:\n";
         cin >> reqId;
-        if (table_manage::doctorsList.find(reqId) != table_manage::doctorsList.end())
-            *this = table_manage::doctorsList[reqId];
+        if (table_manage::employeeList.find(reqId) != table_manage::employeeList.end())
+            *this = table_manage::employeeList[reqId];
         else
             cout << "\nNo matching record found!\n";
     }
@@ -181,7 +182,7 @@ void Employee::getDetails(int rec)
         cout << "\nLast Name:\n";
         getline(cin, reqLName);
         vector<Employee> matchingRecords;
-        for (auto i : table_manage::doctorsList)
+        for (auto i : table_manage::employeeList)
         {
             if (i.second.firstName == reqFName && i.second.lastName == reqLName)
                 matchingRecords.push_back(i.second);
@@ -198,8 +199,8 @@ void Employee::getDetails(int rec)
                 int reqId;
                 cout << "\nEnter the ID of the required Employee: ";
                 cin >> reqId;
-                if (table_manage::doctorsList.find(reqId) != table_manage::doctorsList.end())
-                    *this = table_manage::doctorsList[reqId];
+                if (table_manage::employeeList.find(reqId) != table_manage::employeeList.end())
+                    *this = table_manage::employeeList[reqId];
                 else
                 {
                     cout << "\nInvalid ID!\nTry again? (Y = Yes || N = No)\n";
@@ -217,7 +218,7 @@ void Employee::getDetails(int rec)
         cout << "Enter the type of Employee required:\n";
         getline(cin >> ws, reqType);
         vector<Employee> matchingRecords;
-        for (auto i : table_manage::doctorsList)
+        for (auto i : table_manage::employeeList)
         {
             if (i.second.type == reqType)
                 matchingRecords.push_back(i.second);
@@ -233,8 +234,8 @@ void Employee::getDetails(int rec)
                 int reqId;
                 cout << "\nEnter the ID of the required Employee: ";
                 cin >> reqId;
-                if (table_manage::doctorsList.find(reqId) != table_manage::doctorsList.end())
-                    *this = table_manage::doctorsList[reqId];
+                if (table_manage::employeeList.find(reqId) != table_manage::employeeList.end())
+                    *this = table_manage::employeeList[reqId];
                 else
                 {
                     cout << "\nInvalid ID!\nTry again? (Y = Yes || N = No)\n";
@@ -355,12 +356,12 @@ void Employee::removePerson()
     getDetails();
     if (id == -1)
         return;
-    if (appointmentsBooked > 0)
+    if (classesScheduled > 0)
     {
         cout << "\nSelected Employee has appointments booked for today, can't be removed.\n\n";
         return;
     }
-    table_manage::doctorsList.erase(id);
+    table_manage::employeeList.erase(id);
 
     string s, temp;
     stringstream str;

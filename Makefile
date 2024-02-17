@@ -1,3 +1,4 @@
+CC=g++
 all: main.cpp ./src/global.cpp ./src/faculty.cpp ./src/login.cpp ./src/signup.cpp ./src/table_manage.cpp
 	g++ -o "./build/app" main.cpp ./src/global.cpp ./src/faculty.cpp ./src/login.cpp ./src/signup.cpp ./src/table_manage.cpp
 

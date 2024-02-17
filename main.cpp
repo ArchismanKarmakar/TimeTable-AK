@@ -17,10 +17,10 @@
 #include <sstream>
 #include <filesystem>
 
-#include "./../include/login.hh"
-#include "./../include/signup.hh"
-#include "./../include/table_manage.hh"
-#include <./../include/global.hh>
+#include "../include/login.hh"
+#include "../include/signup.hh"
+#include "../include/table_manage.hh"
+#include <../include/global.hh>
 
 // #define cls() system("cls");
 // #define swap(a, b) do { typeof(a) temp = a; a = b; b = temp; } while (0)
